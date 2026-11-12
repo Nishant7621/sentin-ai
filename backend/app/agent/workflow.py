@@ -89,9 +89,9 @@ class AgentWorkflow:
         if intent == "OUT_OF_SCOPE":
             return {
                 "answer": (
-                    "Out of Scope Refusal: I am Project Atlas, a syndicated market research assistant for Cognitive Market "
-                    "Research and Consulting. I cannot comment on political elections, medical advice, or personal inquiries outside "
-                    "our published industry market research coverage (Utilities, Consumer Durables, Clean Tech, Healthcare, and Automotive)."
+                    "Out of Scope Refusal: I am SentinAI, an enterprise cleantech and smart utilities research copilot for Nexura Global Intelligence. "
+                    "I cannot comment on political elections, medical advice, or personal inquiries outside "
+                    "our published industry market research coverage (Utilities, Smart Grid, Clean Tech, Healthcare Systems, and Automotive)."
                 ),
                 "citations": [],
                 "confidence": 1.0,
@@ -285,7 +285,7 @@ class AgentWorkflow:
             return {
                 "answer": (
                     "No relevant information was found in your licensed reports. "
-                    "If you believe this topic is covered in other Cognitive Market Research reports, "
+                    "If you believe this topic is covered in other Nexura Global Intelligence reports, "
                     "please check your subscription catalog."
                 ),
                 "citations": [],
@@ -314,7 +314,7 @@ class AgentWorkflow:
             if r101_chunk and r102_chunk:
                 answer = (
                     "Based on your licensed reports, two authoritative 2024 market valuations exist with differing scope boundaries:\n\n"
-                    "- **R-101 (Cognitive Market Research, March 2025):** Valued at **USD 4.21 Billion** in 2024. "
+                    "- **R-101 (CMR - Nexura Intelligence, March 2025):** Valued at **USD 4.21 Billion** in 2024. "
                     "This reflects a complete **turnkey market scope**, incorporating physical smart meters (AMR/AMI), communications modules, "
                     "Meter Data Management Systems (MDMS), utility billing analytics, and managed deployment services.\n\n"
                     "- **R-102 (Aquila Insights, June 2024):** Valued at **USD 3.87 Billion** in 2024. "
@@ -324,7 +324,7 @@ class AgentWorkflow:
                 )
             elif r101_chunk:
                 answer = (
-                    "According to **R-101 (Cognitive Market Research)**, the global smart water meter market was valued at "
+                    "According to **R-101 (CMR - Nexura Intelligence)**, the global smart water meter market was valued at "
                     "**USD 4.21 Billion** in 2024 (turnkey scope including hardware, software, and managed services)."
                 )
             elif r102_chunk:
