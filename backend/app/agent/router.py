@@ -43,20 +43,18 @@ class QuestionRouter:
                 "reason": "Direct prompt injection or confidential data exfiltration attempt detected."
             }
 
-        # 2. Destructive SQL / Database modification
-        sql_attack_triggers = [
-            "delete all rows",
-            "delete from",
-            "drop table",
-            "truncate",
-            "update reports",
-            "insert into"
+        # 2. Destructive SQL / Natural Language Database modification
+        nl_sql_patterns = [
+            r'\b(delete|drop|wipe|clear|remove|erase|truncate|destroy|purge)\b.*\b(rows?|records?|table|reports?|database|db|catalog|data|everything)\b',
+            r'\b(modify|alter|update|insert|inject)\b.*\b(table|reports?|database|schema|rows?)\b',
+            r'\b(delete all rows|delete from|drop table|truncate|update reports|insert into)\b',
+            r'--|;|\bunion\s+select\b|\bexec\b|\bexecute\b'
         ]
-        if any(trigger in q_lower for trigger in sql_attack_triggers):
+        if any(re.search(pat, q_lower) for pat in nl_sql_patterns):
             return {
                 "intent": "SQL_ATTACK",
                 "target_report": target_rep,
-                "reason": "Destructive SQL operation detected. Read-only policy strictly enforced."
+                "reason": "Destructive natural language SQL operation blocked. Database is read-only."
             }
 
         # 3. Aggregate SQL questions about library catalog

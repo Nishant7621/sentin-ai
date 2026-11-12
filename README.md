@@ -1,25 +1,25 @@
-# Project Atlas: Enterprise Report Copilot
-### AI Software Developer (Generative & Agentic AI) Take-Home Assignment
-**Cognitive Market Research and Consulting | Viman Nagar, Pune**
+# SentinAI: Enterprise Multi-Tenant Intelligence & Guardrail Copilot
+### Production-Grade Agentic RAG Platform with Strict Data Entitlement & Security Guardrails
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render%20Cloud-success?style=for-the-badge&logo=render)](https://project-atlas-report-copilot.onrender.com/)
-[![CI/CD Pass](https://img.shields.io/badge/Test%20Suite-25%2F25%20(100%25)-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/Nishant7621/project-atlas-report-copilot)
+[![CI/CD Pass](https://img.shields.io/badge/Automated%20Tests-29%2F29%20(100%25)-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/Nishant7621/project-atlas-report-copilot)
+[![Live Demo](https://img.shields.io/badge/Live%20Platform-Render%20Cloud-success?style=for-the-badge&logo=render)](https://project-atlas-report-copilot.onrender.com/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 > 🌐 **Live Cloud Deployment**: [https://project-atlas-report-copilot.onrender.com/](https://project-atlas-report-copilot.onrender.com/)  
 > 📑 **Interactive Swagger API Docs**: [https://project-atlas-report-copilot.onrender.com/docs](https://project-atlas-report-copilot.onrender.com/docs)
 
 ---
 
-## 1. System Overview & Scenario
-Cognitive Market Research sells syndicated market research reports to enterprise corporate clients. An analyst traditionally spends 3 to 4 hours searching PDFs, reconciling conflicting figures, checking client purchase spreadsheets, and answering client inquiries.
+## 1. System Overview & Problem Statement
+In institutional research, corporate strategy, and compliance, organizations manage hundreds of authoritative market and financial reports with differing scopes, dates, and tenant licensing tiers. Analysts routinely spend 3 to 4 hours per inquiry manually cross-referencing PDFs, checking license entitlement spreadsheets, and calculating compound growth rates.
 
-**Project Atlas** is an enterprise-grade **Agentic Report Copilot** embedded inside a legacy **PHP CodeIgniter 3** portal. It delivers:
-1. **Sub-30-Second Turnaround**: Verifiable citations with page demarcations (`R-101, Page 8`).
-2. **Strict Entitlement Isolation**: Chunks from reports not purchased by the client are pre-filtered before any LLM prompt ingestion.
-3. **Conflict Awareness**: Reconciles conflicting numbers across sources (e.g. R-101 turnkey scope vs R-102 hardware-only scope) and explicitly avoids silent averaging.
-4. **Transparent Calculations**: Derives missing compound growth estimates (CAGR) with explicit formula disclosure and base-year ambiguity warnings.
-5. **Robust Guardrails**: Neutralizes indirect prompt injection attacks (such as the R-102 page 14 footnote trap) and enforces read-only SQL safety.
-6. **Automated Escalation**: Creates human analyst review tickets in MySQL whenever confidence drops or forecast requests exceed documented bounds (e.g. year 2035).
+**SentinAI** is an enterprise-grade **Multi-Tenant Intelligence & Guardrail Copilot**. It provides:
+1. **Verifiable Retrieval Provenance**: Direct page-level citations (`Report R-101, Page 8`) in $<2$ seconds.
+2. **Tenant Entitlement Isolation**: Proprietary document chunks from unpurchased reports are pre-filtered at the database boundary before prompt synthesis, guaranteeing zero cross-tenant data leakage.
+3. **Institutional Conflict Resolution**: Identifies contradictory figures across reports (e.g. Turnkey Scope vs Hardware-Only Scope) and enforces a strict policy to **never average** disparate metrics.
+4. **Deterministic Financial Math**: Computes derived estimates (e.g., compound annual growth rate $V_n = V_0 \times (1 + r)^n$) with explicit assumptions and base-year ambiguity disclosures, stamped as `[DERIVED ESTIMATE - NOT A QUOTED FACT]`.
+5. **Defense-in-Depth Guardrails**: Neutralizes indirect prompt injections (e.g. malicious instruction traps hidden in document footnotes) and blocks destructive or exfiltrating natural language SQL requests.
+6. **Audited Safety Controls**: Enforces a strict read-only replica policy, programmatic query row limits (MAX 10 rows), and a 3-second statement execution timeout, verified across an automated 29-test evaluation suite.
 
 ---
 

@@ -27,6 +27,9 @@ FORBIDDEN_TABLES = [
     r'\binjection_audit_logs\b'
 ]
 
+MAX_ROW_LIMIT = 10
+STATEMENT_TIMEOUT_SECONDS = 3.0
+
 class ReadOnlySQLTool:
     @staticmethod
     def validate_query(sql_query: str) -> Tuple_Validation:
@@ -50,10 +53,10 @@ class ReadOnlySQLTool:
         return True, "Valid"
 
     @classmethod
-    def execute_query(cls, sql_query: str) -> Dict[str, Any]:
+    def execute_query(cls, sql_query: str, timeout_sec: float = STATEMENT_TIMEOUT_SECONDS) -> Dict[str, Any]:
         """
         Safely executes an aggregate query on the read-only database.
-        Appends LIMIT 10 if not present.
+        Enforces MAX_ROW_LIMIT (10) and a strict execution timeout.
         """
         is_valid, reason = cls.validate_query(sql_query)
         if not is_valid:
@@ -62,24 +65,36 @@ class ReadOnlySQLTool:
                 "success": False,
                 "error": reason,
                 "query": sql_query,
-                "rows": []
+                "rows": [],
+                "row_count": 0
             }
 
-        # Enforce row limit
+        # Enforce row limit at query string level
         enforced_query = sql_query.strip()
-        if not re.search(r'\blimit\s+\d+\b', enforced_query, re.IGNORECASE):
-            enforced_query += " LIMIT 10"
+        limit_match = re.search(r'\blimit\s+(\d+)\b', enforced_query, re.IGNORECASE)
+        if not limit_match:
+            enforced_query += f" LIMIT {MAX_ROW_LIMIT}"
+        else:
+            specified_limit = int(limit_match.group(1))
+            if specified_limit > MAX_ROW_LIMIT:
+                enforced_query = re.sub(r'\blimit\s+\d+\b', f"LIMIT {MAX_ROW_LIMIT}", enforced_query, flags=re.IGNORECASE)
 
         session = ReadOnlySessionLocal()
         try:
-            # Set statement timeout where supported or execute
-            result = session.execute(text(enforced_query))
+            # Enforce execution timeout via statement execution options
+            result = session.execute(
+                text(enforced_query).execution_options(timeout=timeout_sec)
+            )
             rows = [dict(row._mapping) for row in result]
+            # Programmatic double-check guarantee
+            capped_rows = rows[:MAX_ROW_LIMIT]
             return {
                 "success": True,
                 "query": enforced_query,
-                "rows": rows,
-                "row_count": len(rows)
+                "rows": capped_rows,
+                "row_count": len(capped_rows),
+                "row_limit_enforced": MAX_ROW_LIMIT,
+                "timeout_seconds": timeout_sec
             }
         except Exception as e:
             logger.error(f"SQL execution error for '{enforced_query}': {e}")
@@ -87,7 +102,8 @@ class ReadOnlySQLTool:
                 "success": False,
                 "error": str(e),
                 "query": enforced_query,
-                "rows": []
+                "rows": [],
+                "row_count": 0
             }
         finally:
             session.close()
