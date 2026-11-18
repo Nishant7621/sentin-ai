@@ -1,12 +1,12 @@
 # SentinAI: Enterprise Multi-Tenant Intelligence & Guardrail Copilot
 ### Production-Grade Agentic RAG Platform with Strict Data Entitlement & Security Guardrails
 
-[![CI/CD Pass](https://img.shields.io/badge/Automated%20Tests-29%2F29%20(100%25)-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/Nishant7621/sentinai-enterprise-copilot)
-[![Live Demo](https://img.shields.io/badge/Live%20Platform-Render%20Cloud-success?style=for-the-badge&logo=render)](https://sentinai-enterprise-copilot.onrender.com/)
+[![CI/CD Pass](https://img.shields.io/badge/Automated%20Tests-29%2F29%20(100%25)-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/Nishant7621/sentin-ai)
+[![Live Demo](https://img.shields.io/badge/Live%20Platform-Render%20Cloud-success?style=for-the-badge&logo=render)](https://sentin-ai.onrender.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-> 🌐 **Live Cloud Deployment**: [https://sentinai-enterprise-copilot.onrender.com/](https://sentinai-enterprise-copilot.onrender.com/)  
-> 📑 **Interactive Swagger API Docs**: [https://sentinai-enterprise-copilot.onrender.com/docs](https://sentinai-enterprise-copilot.onrender.com/docs)
+> 🌐 **Live Cloud Deployment**: [https://sentin-ai.onrender.com/](https://sentin-ai.onrender.com/)  
+> 📑 **Interactive Swagger API Docs**: [https://sentin-ai.onrender.com/docs](https://sentin-ai.onrender.com/docs)
 
 ---
 
@@ -74,7 +74,7 @@ Starts MySQL, the FastAPI Agent Backend, and the PHP CodeIgniter 3 Portal with a
 
 ```bash
 # 1. Clone or navigate to the repository
-cd sentinai-enterprise-copilot
+cd sentin-ai
 
 # 2. Launch the entire containerized stack
 docker compose up --build
