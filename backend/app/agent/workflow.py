@@ -138,7 +138,7 @@ class AgentWorkflow:
                         f"Access Restricted (Entitlement Required): Your organization does not have an active license "
                         f"for report '{target_rep}: {rep_title}'. "
                         f"Under our data licensing policy, quantitative figures and proprietary excerpts are withheld. "
-                        f"To access this complete report, please contact your account manager at sales@cognitivemarketresearch.com "
+                        f"To access this complete report, please contact your account manager at licensing@sentinai.io "
                         f"or upgrade your subscription tier."
                     ),
                     "citations": [],
@@ -230,7 +230,7 @@ class AgentWorkflow:
                         "Report Trust & Entitlement Assessment:\n\n"
                         "You currently have access to **R-102: Smart Water Metering: Industry Outlook 2024** (Public Excerpt), "
                         "which reports a 2024 physical hardware market size of USD 3.87 Billion (AMR/AMI hardware only).\n\n"
-                        "Our catalog also contains **R-101: Global Smart Water Meter Market 2025** published by CMR, "
+                        "Our catalog also contains **R-101: Global Smart Water Meter Market 2025** published by SentinAI Strategic Intelligence (SSI), "
                         "which provides a comprehensive turnkey scope (hardware, software platforms, and managed services). "
                         "However, your current organization license does not include R-101. None of its proprietary figures are displayed. "
                         "To evaluate the broader turnkey software/services ecosystem alongside R-102, an upgrade to R-101 is recommended. "
@@ -258,7 +258,7 @@ class AgentWorkflow:
             answer = (
                 "Methodological Comparison & Trust Recommendation:\n\n"
                 "Both reports are rigorous, but they address fundamentally different scope definitions:\n\n"
-                "1. **Trust R-101 (CMR - March 2025)** if your objective is assessing the **total turnkey utility market** "
+                "1. **Trust R-101 (SSI - March 2025)** if your objective is assessing the **total turnkey utility market** "
                 "(USD 4.21 Billion in 2024; CAGR 11.2%), which encompasses physical meters, communications modules, "
                 "Meter Data Management Systems (MDMS), cloud analytics, and field deployment services.\n\n"
                 "2. **Trust R-102 (Aquila Insights - June 2024)** if you require a pure **physical instrumentation benchmark** "
@@ -314,7 +314,7 @@ class AgentWorkflow:
             if r101_chunk and r102_chunk:
                 answer = (
                     "Based on your licensed reports, two authoritative 2024 market valuations exist with differing scope boundaries:\n\n"
-                    "- **R-101 (CMR - Nexura Intelligence, March 2025):** Valued at **USD 4.21 Billion** in 2024. "
+                    "- **R-101 (SSI - Nexura Intelligence, March 2025):** Valued at **USD 4.21 Billion** in 2024. "
                     "This reflects a complete **turnkey market scope**, incorporating physical smart meters (AMR/AMI), communications modules, "
                     "Meter Data Management Systems (MDMS), utility billing analytics, and managed deployment services.\n\n"
                     "- **R-102 (Aquila Insights, June 2024):** Valued at **USD 3.87 Billion** in 2024. "
@@ -324,7 +324,7 @@ class AgentWorkflow:
                 )
             elif r101_chunk:
                 answer = (
-                    "According to **R-101 (CMR - Nexura Intelligence)**, the global smart water meter market was valued at "
+                    "According to **R-101 (SSI - Nexura Intelligence)**, the global smart water meter market was valued at "
                     "**USD 4.21 Billion** in 2024 (turnkey scope including hardware, software, and managed services)."
                 )
             elif r102_chunk:

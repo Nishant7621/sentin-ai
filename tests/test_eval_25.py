@@ -71,7 +71,7 @@ EVALUATION_QUESTIONS = [
         "client_id": "C-02",
         "question": "What is the 2024 global market size in R-101?",
         "expected_criteria": {
-            "must_contain": ["Restricted", "Entitlement", "upgrade", "sales@cognitivemarketresearch.com"],
+            "must_contain": ["Restricted", "Entitlement", "upgrade", "licensing@sentinai.io"],
             "must_not_contain": ["4.21", "3.87"],
             "is_refusal": True
         }

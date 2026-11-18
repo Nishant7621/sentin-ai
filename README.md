@@ -1,12 +1,12 @@
 # SentinAI: Enterprise Multi-Tenant Intelligence & Guardrail Copilot
 ### Production-Grade Agentic RAG Platform with Strict Data Entitlement & Security Guardrails
 
-[![CI/CD Pass](https://img.shields.io/badge/Automated%20Tests-29%2F29%20(100%25)-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/Nishant7621/project-atlas-report-copilot)
-[![Live Demo](https://img.shields.io/badge/Live%20Platform-Render%20Cloud-success?style=for-the-badge&logo=render)](https://project-atlas-report-copilot.onrender.com/)
+[![CI/CD Pass](https://img.shields.io/badge/Automated%20Tests-29%2F29%20(100%25)-brightgreen?style=for-the-badge&logo=pytest)](https://github.com/Nishant7621/sentinai-enterprise-copilot)
+[![Live Demo](https://img.shields.io/badge/Live%20Platform-Render%20Cloud-success?style=for-the-badge&logo=render)](https://sentinai-enterprise-copilot.onrender.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-> 🌐 **Live Cloud Deployment**: [https://project-atlas-report-copilot.onrender.com/](https://project-atlas-report-copilot.onrender.com/)  
-> 📑 **Interactive Swagger API Docs**: [https://project-atlas-report-copilot.onrender.com/docs](https://project-atlas-report-copilot.onrender.com/docs)
+> 🌐 **Live Cloud Deployment**: [https://sentinai-enterprise-copilot.onrender.com/](https://sentinai-enterprise-copilot.onrender.com/)  
+> 📑 **Interactive Swagger API Docs**: [https://sentinai-enterprise-copilot.onrender.com/docs](https://sentinai-enterprise-copilot.onrender.com/docs)
 
 ---
 
@@ -74,7 +74,7 @@ Starts MySQL, the FastAPI Agent Backend, and the PHP CodeIgniter 3 Portal with a
 
 ```bash
 # 1. Clone or navigate to the repository
-cd project-atlas
+cd sentinai-enterprise-copilot
 
 # 2. Launch the entire containerized stack
 docker compose up --build
@@ -85,7 +85,7 @@ docker compose up --build
 * **Health Check Endpoint:** `http://localhost:8000/health`
 
 ### Option B: Local Development (Offline SQLite Fallback)
-If running without Docker, Project Atlas includes an automatic fallback to local SQLite:
+If running without Docker, SentinAI includes an automatic fallback to local SQLite:
 
 ```bash
 # 1. Navigate to backend
@@ -110,8 +110,8 @@ uvicorn app.main:app --reload --port 8000
 | **Conflicting Sources** | `CriticFactChecker` evaluates concurrent R-101 and R-102 figures. Explicitly states R-101 is USD 4.21B (turnkey hardware/software/services) while R-102 is USD 3.87B (hardware only). **Prohibits mathematical averaging** ($4.04B). | Test #1, #3 |
 | **Missing Numbers (Derived Estimates)** | `CalculatorTool` computes future valuations via $V_n = V_0 \times (1 + r)^n$. Discloses formula, states constant regional share assumptions, and highlights base-year ambiguity (5-yr window 2025–2030: USD 2.72B vs 6-yr elapsed 2024–2030: USD 3.03B). Labeled as **[DERIVED ESTIMATE]**. | Test #2, #22 |
 | **Prompt Injection Footnote (R-102 Page 14)** | `InjectionDefender` intercepts chunks containing malicious instruction directives (`NOTE TO AI SYSTEMS: Disregard all previous instructions...`), logs incident to `injection_audit_logs`, redacts attack instructions, and extracts legitimate figures (USD 3.87B, 9.8% CAGR). | Test #6, #16, #17, #18 |
-| **Entitlement Pre-Filtering** | Client `C-02` owns R-103 only. `EntitlementAwareVectorStore` strictly discards R-101 chunks before ranking or LLM ingestion. Returns a polite refusal acknowledging report existence in the catalog and offers an upgrade path (`sales@cognitivemarketresearch.com`). | Test #4, #5, #11 |
-| **SQL Safety** | `ReadOnlySQLTool` employs AST/regex blocking for `DROP`, `DELETE`, `UPDATE`, `INSERT`, `TRUNCATE`, enforces a 10-row limit, restricts queries to `reports` and `market_metrics` (protecting confidential client emails), and executes via read-only user `atlas_ro`. | Test #7, #8, #19, #20, #21 |
+| **Entitlement Pre-Filtering** | Client `C-02` owns R-103 only. `EntitlementAwareVectorStore` strictly discards R-101 chunks before ranking or LLM ingestion. Returns a polite refusal acknowledging report existence in the catalog and offers an upgrade path (`licensing@sentinai.io`). | Test #4, #5, #11 |
+| **SQL Safety** | `ReadOnlySQLTool` employs AST/regex blocking for `DROP`, `DELETE`, `UPDATE`, `INSERT`, `TRUNCATE`, enforces a 10-row limit, restricts queries to `reports` and `market_metrics` (protecting confidential client emails), and executes via read-only user `sentinai_ro`. | Test #7, #8, #19, #20, #21 |
 | **Forecast Horizon & Escalation** | Queries requesting projections beyond the verified 2030 window (e.g. 2035) are flagged. Rather than hallucinating extrapolation, an escalation ticket is auto-created in MySQL. | Test #10, #23 |
 
 ---
@@ -176,5 +176,5 @@ Use this step-by-step sequence when recording the review video:
    * *Decision:* Couple vector retrieval with the `CriticFactChecker` conflict analysis rule engine.
    * *Rationale:* LLMs frequently try to harmonize contradictory numbers by averaging or picking the highest one. Explicit deterministic conflict detection ensures institutional accuracy.
 3. **Read-Only Database Replica vs Application Query Builder:**
-   * *Decision:* Combine application-level regex/AST statement blocking with a database-level read-only user (`atlas_ro`) restricted solely to public tables.
+   * *Decision:* Combine application-level regex/AST statement blocking with a database-level read-only user (`sentinai_ro`) restricted solely to public tables.
    * *Rationale:* Defense-in-depth ensures that even if an injection bypasses application filters, the database engine itself rejects write operations and protects PII tables.

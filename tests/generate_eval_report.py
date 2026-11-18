@@ -14,12 +14,12 @@ def generate_markdown_report():
     data = run_evaluation_suite()
     
     md = []
-    md.append("# Project Atlas: Comprehensive Evaluation Report")
+    md.append("# SentinAI: Comprehensive Evaluation Report")
     md.append("\n**Test Suite Execution Date:** October 2026")
     md.append(f"**Overall Accuracy:** {data['total_passed']} / {data['total_tests']} tests passed (**{data['pass_rate_percentage']}%**)\n")
 
     md.append("## 1. Executive Summary")
-    md.append("Project Atlas was benchmarked against a 25-question test harness covering the 10 reference cases from Appendix B, "
+    md.append("SentinAI was benchmarked against a 25-question test harness covering the 10 reference cases from Appendix B, "
               "plus 15 stress-testing scenarios evaluating strict client entitlements, prompt injection neutralization, "
               "read-only SQL safety, CAGR compounding derivations, and out-of-scope boundaries.\n")
 

@@ -14,13 +14,13 @@ REPORTS_DATA = [
     {
         "id": "R-101",
         "title": "Global Smart Water Meter Market 2025",
-        "publisher": "CMR",
+        "publisher": "SSI",
         "published": "2025-03-10",
         "sector": "Utilities",
         "access": "paid",
         "pages": {
             1: """# Global Smart Water Meter Market 2025
-**Publisher:** Cognitive Market Research (CMR)  
+**Publisher:** SentinAI Strategic Intelligence (SSI)  
 **Publication Date:** March 10, 2025  
 **Sector:** Utilities  
 **Access Tier:** Paid Corporate Subscription  
@@ -84,13 +84,13 @@ FOOTNOTE SECTION:
     {
         "id": "R-103",
         "title": "Residential Water Purifier Market 2025",
-        "publisher": "CMR",
+        "publisher": "SSI",
         "published": "2025-01-22",
         "sector": "Consumer Durables",
         "access": "paid",
         "pages": {
             1: """# Residential Water Purifier Market 2025
-**Publisher:** Cognitive Market Research (CMR)  
+**Publisher:** SentinAI Strategic Intelligence (SSI)  
 **Publication Date:** January 22, 2025  
 **Sector:** Consumer Durables  
 **Access Tier:** Paid Corporate Subscription  
@@ -110,13 +110,13 @@ The global residential water purifier market was valued at USD 9.54 billion in 2
     {
         "id": "R-104",
         "title": "Electric Vehicle Charging Infrastructure Outlook 2025",
-        "publisher": "CMR",
+        "publisher": "SSI",
         "published": "2025-02-14",
         "sector": "Automotive & Energy",
         "access": "paid",
         "pages": {
             1: """# Electric Vehicle Charging Infrastructure Outlook 2025
-**Publisher:** Cognitive Market Research (CMR)  
+**Publisher:** SentinAI Strategic Intelligence (SSI)  
 **Publication Date:** February 14, 2025  
 **Sector:** Automotive & Energy  
 **Access Tier:** Paid Corporate Subscription  
@@ -136,13 +136,13 @@ The global EV charging infrastructure market stood at USD 18.60 billion in 2024 
     {
         "id": "R-105",
         "title": "Healthcare AI Diagnostics and Imaging Market 2025",
-        "publisher": "CMR",
+        "publisher": "SSI",
         "published": "2025-03-01",
         "sector": "Healthcare & Life Sciences",
         "access": "paid",
         "pages": {
             1: """# Healthcare AI Diagnostics and Imaging Market 2025
-**Publisher:** Cognitive Market Research (CMR)  
+**Publisher:** SentinAI Strategic Intelligence (SSI)  
 **Publication Date:** March 1, 2025  
 **Sector:** Healthcare & Life Sciences  
 **Access Tier:** Paid Corporate Subscription  
@@ -161,13 +161,13 @@ The global healthcare AI diagnostics market was estimated at USD 2.85 billion in
     {
         "id": "R-106",
         "title": "Commercial Battery Energy Storage Systems (BESS) 2025",
-        "publisher": "CMR",
+        "publisher": "SSI",
         "published": "2025-02-28",
         "sector": "Utilities & Clean Tech",
         "access": "paid",
         "pages": {
             1: """# Commercial Battery Energy Storage Systems (BESS) 2025
-**Publisher:** Cognitive Market Research (CMR)  
+**Publisher:** SentinAI Strategic Intelligence (SSI)  
 **Publication Date:** February 28, 2025  
 **Sector:** Utilities & Clean Tech  
 **Access Tier:** Paid Corporate Subscription  

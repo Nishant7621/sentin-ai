@@ -20,7 +20,7 @@ def seed_database():
             Report(
                 id="R-101",
                 title="Global Smart Water Meter Market 2025",
-                publisher="CMR",
+                publisher="SSI",
                 published=datetime.strptime("2025-03-10", "%Y-%m-%d").date(),
                 sector="Utilities",
                 access="paid"
@@ -36,7 +36,7 @@ def seed_database():
             Report(
                 id="R-103",
                 title="Residential Water Purifier Market 2025",
-                publisher="CMR",
+                publisher="SSI",
                 published=datetime.strptime("2025-01-22", "%Y-%m-%d").date(),
                 sector="Consumer Durables",
                 access="paid"
@@ -44,7 +44,7 @@ def seed_database():
             Report(
                 id="R-104",
                 title="Electric Vehicle Charging Infrastructure Outlook 2025",
-                publisher="CMR",
+                publisher="SSI",
                 published=datetime.strptime("2025-02-14", "%Y-%m-%d").date(),
                 sector="Automotive & Energy",
                 access="paid"
@@ -52,7 +52,7 @@ def seed_database():
             Report(
                 id="R-105",
                 title="Healthcare AI Diagnostics and Imaging Market 2025",
-                publisher="CMR",
+                publisher="SSI",
                 published=datetime.strptime("2025-03-01", "%Y-%m-%d").date(),
                 sector="Healthcare & Life Sciences",
                 access="paid"
@@ -60,7 +60,7 @@ def seed_database():
             Report(
                 id="R-106",
                 title="Commercial Battery Energy Storage Systems (BESS) 2025",
-                publisher="CMR",
+                publisher="SSI",
                 published=datetime.strptime("2025-02-28", "%Y-%m-%d").date(),
                 sector="Utilities & Clean Tech",
                 access="paid"

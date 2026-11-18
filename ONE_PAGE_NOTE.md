@@ -1,5 +1,5 @@
 # What I Would Do With One More Week
-**Project Atlas — Enterprise Syndicated Market Research Copilot**  
+**SentinAI — Enterprise Syndicated Market Research Copilot**  
 **Author:** AI Software Developer (Generative & Agentic AI)
 
 ---

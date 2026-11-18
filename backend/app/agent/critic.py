@@ -25,7 +25,7 @@ class CriticFactChecker:
                 "sources": [
                     {
                         "report_id": "R-101",
-                        "publisher": "CMR",
+                        "publisher": "SSI",
                         "value": "USD 4.21 Billion",
                         "scope": "Turnkey scope (hardware, software, and managed services)",
                         "citation": "R-101, Page 8"

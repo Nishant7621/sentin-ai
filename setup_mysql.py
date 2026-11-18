@@ -126,12 +126,12 @@ def setup_mysql():
     cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
 
     reports_data = [
-        ("R-101", "Global Smart Water Meter Market 2025", "CMR", "2025-03-10", "Utilities", "paid"),
+        ("R-101", "Global Smart Water Meter Market 2025", "SSI", "2025-03-10", "Utilities", "paid"),
         ("R-102", "Smart Water Metering: Industry Outlook 2024", "Aquila Insights (third party)", "2024-06-18", "Utilities", "public excerpt"),
-        ("R-103", "Residential Water Purifier Market 2025", "CMR", "2025-01-22", "Consumer Durables", "paid"),
-        ("R-104", "Electric Vehicle Charging Infrastructure Outlook 2025", "CMR", "2025-02-14", "Automotive & Energy", "paid"),
-        ("R-105", "Healthcare AI Diagnostics and Imaging Market 2025", "CMR", "2025-03-01", "Healthcare & Life Sciences", "paid"),
-        ("R-106", "Commercial Battery Energy Storage Systems (BESS) 2025", "CMR", "2025-02-28", "Utilities & Clean Tech", "paid")
+        ("R-103", "Residential Water Purifier Market 2025", "SSI", "2025-01-22", "Consumer Durables", "paid"),
+        ("R-104", "Electric Vehicle Charging Infrastructure Outlook 2025", "SSI", "2025-02-14", "Automotive & Energy", "paid"),
+        ("R-105", "Healthcare AI Diagnostics and Imaging Market 2025", "SSI", "2025-03-01", "Healthcare & Life Sciences", "paid"),
+        ("R-106", "Commercial Battery Energy Storage Systems (BESS) 2025", "SSI", "2025-02-28", "Utilities & Clean Tech", "paid")
     ]
     cursor.executemany("INSERT INTO reports (id, title, publisher, published, sector, access) VALUES (%s, %s, %s, %s, %s, %s)", reports_data)
     print(f"Inserted {len(reports_data)} rows into 'reports'.")

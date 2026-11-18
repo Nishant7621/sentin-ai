@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mysql:
     image: mysql:8.0
-    container_name: atlas_mysql
+    container_name: sentinai_mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root_secure_pass
@@ -25,7 +25,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: atlas_backend
+    container_name: sentinai_backend
     restart: always
     depends_on:
       mysql:
@@ -46,7 +46,7 @@ services:
     build:
       context: ./php-portal
       dockerfile: Dockerfile
-    container_name: atlas_ci3_portal
+    container_name: sentinai_ci3_portal
     restart: always
     depends_on:
       - backend

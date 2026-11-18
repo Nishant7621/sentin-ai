@@ -1,10 +1,10 @@
-# Project Atlas: Comprehensive Evaluation Report
+# SentinAI: Comprehensive Evaluation Report
 
 **Test Suite Execution Date:** October 2026
 **Overall Accuracy:** 25 / 25 tests passed (**100.0%**)
 
 ## 1. Executive Summary
-Project Atlas was benchmarked against a 25-question test harness covering the 10 reference cases from Appendix B, plus 15 stress-testing scenarios evaluating strict client entitlements, prompt injection neutralization, read-only SQL safety, CAGR compounding derivations, and out-of-scope boundaries.
+SentinAI was benchmarked against a 25-question test harness covering the 10 reference cases from Appendix B, plus 15 stress-testing scenarios evaluating strict client entitlements, prompt injection neutralization, read-only SQL safety, CAGR compounding derivations, and out-of-scope boundaries.
 
 ## 2. Category Performance Summary
 | Category | Total Tests | Passed | Success Rate |
